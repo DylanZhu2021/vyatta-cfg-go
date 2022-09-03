@@ -1,0 +1,21 @@
+# 使用pattern的正则表达式进行校验
+* > ./cluster/mcast-group/node.def:3:syntax:expression: pattern $VAR(@) "^239\."
+  ./interfaces/input/node.def:6:syntax:expression: pattern $VAR(@) "^ifb[0-9]+$" ; "name must be (ifb0-ifb999)"
+  ./traffic-policy/drop-tail/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/fair-queue/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/fq-codel/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/limiter/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/limiter/node.tag/class/node.tag/match/node.def:3:syntax:expression: pattern $VAR(@) "^[^-]" ; "Match queue name cannot start with \"-\""
+  ./traffic-policy/network-emulator/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/priority-queue/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/priority-queue/node.tag/class/node.tag/match/node.def:3:syntax:expression: pattern $VAR(@) "^[^-]" ; "Match queue name cannot start with \"-\""
+  ./traffic-policy/random-detect/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/rate-control/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/round-robin/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/round-robin/node.tag/class/node.tag/match/node.def:3:syntax:expression: pattern $VAR(@) "^[^-]" ; "Match queue name cannot start with \"-\""
+  ./traffic-policy/shaper/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/shaper/node.tag/class/node.tag/match/node.def:3:syntax:expression: pattern $VAR(@) "^[^-]" ; "Match queue name cannot start with \"-\""
+  ./traffic-policy/shaper-hfsc/node.def:4:syntax:expression: pattern $VAR(@) "^[[:alnum:]][-_[:alnum:]]*$"
+  ./traffic-policy/shaper-hfsc/node.tag/class/node.tag/match/node.def:3:syntax:expression: pattern $VAR(@) "^[^-]" ; "Match queue name cannot start with \"-\""
+* 获取syntax字段中的正则表达式，然后进行匹配，获取会返回值
+* 若不匹配，则会返回pattern结构体种的Ret值
